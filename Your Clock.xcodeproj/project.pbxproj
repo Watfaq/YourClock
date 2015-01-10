@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42BCF1E21A615A890031399F /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42BCF1E11A615A890031399F /* RootViewController.xib */; };
+		42BCF1EC1A615C950031399F /* clockBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 42BCF1E91A615C950031399F /* clockBg.png */; };
+		42BCF1ED1A615C950031399F /* Minite.png in Resources */ = {isa = PBXBuildFile; fileRef = 42BCF1EA1A615C950031399F /* Minite.png */; };
+		42BCF1EE1A615C950031399F /* Hour.png in Resources */ = {isa = PBXBuildFile; fileRef = 42BCF1EB1A615C950031399F /* Hour.png */; };
 		42E34D171A602B0500AEE83D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E34D161A602B0500AEE83D /* main.m */; };
 		42E34D1A1A602B0500AEE83D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E34D191A602B0500AEE83D /* AppDelegate.m */; };
 		42E34D1D1A602B0600AEE83D /* Your_Clock.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 42E34D1B1A602B0600AEE83D /* Your_Clock.xcdatamodeld */; };
-		42E34D201A602B0600AEE83D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E34D1F1A602B0600AEE83D /* ViewController.m */; };
-		42E34D231A602B0600AEE83D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42E34D211A602B0600AEE83D /* Main.storyboard */; };
 		42E34D251A602B0600AEE83D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42E34D241A602B0600AEE83D /* Images.xcassets */; };
 		42E34D281A602B0600AEE83D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42E34D261A602B0600AEE83D /* LaunchScreen.xib */; };
 		42E34D341A602B0600AEE83D /* Your_ClockTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E34D331A602B0600AEE83D /* Your_ClockTests.m */; };
+		42E34D401A602B2900AEE83D /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E34D3E1A602B2900AEE83D /* RootViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,20 +31,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		42BCF1E11A615A890031399F /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
+		42BCF1E91A615C950031399F /* clockBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clockBg.png; sourceTree = "<group>"; };
+		42BCF1EA1A615C950031399F /* Minite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Minite.png; sourceTree = "<group>"; };
+		42BCF1EB1A615C950031399F /* Hour.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hour.png; sourceTree = "<group>"; };
 		42E34D111A602B0500AEE83D /* Your Clock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Your Clock.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42E34D151A602B0500AEE83D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42E34D161A602B0500AEE83D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		42E34D181A602B0500AEE83D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		42E34D191A602B0500AEE83D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		42E34D1C1A602B0600AEE83D /* Your_Clock.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Your_Clock.xcdatamodel; sourceTree = "<group>"; };
-		42E34D1E1A602B0600AEE83D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		42E34D1F1A602B0600AEE83D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		42E34D221A602B0600AEE83D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		42E34D241A602B0600AEE83D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		42E34D271A602B0600AEE83D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		42E34D2D1A602B0600AEE83D /* Your ClockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Your ClockTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42E34D321A602B0600AEE83D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42E34D331A602B0600AEE83D /* Your_ClockTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Your_ClockTests.m; sourceTree = "<group>"; };
+		42E34D3D1A602B2900AEE83D /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		42E34D3E1A602B2900AEE83D /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		42BCF1F31A616A400031399F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				42E34D3D1A602B2900AEE83D /* RootViewController.h */,
+				42E34D3E1A602B2900AEE83D /* RootViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		42BCF1F41A616A660031399F /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				42E34D261A602B0600AEE83D /* LaunchScreen.xib */,
+				42BCF1E11A615A890031399F /* RootViewController.xib */,
+			);
+			name = Layouts;
+			sourceTree = "<group>";
+		};
 		42E34D081A602B0500AEE83D = {
 			isa = PBXGroup;
 			children = (
@@ -83,13 +107,11 @@
 		42E34D131A602B0500AEE83D /* Your Clock */ = {
 			isa = PBXGroup;
 			children = (
+				42BCF1F41A616A660031399F /* Layouts */,
+				42BCF1F31A616A400031399F /* Controllers */,
 				42E34D181A602B0500AEE83D /* AppDelegate.h */,
 				42E34D191A602B0500AEE83D /* AppDelegate.m */,
-				42E34D1E1A602B0600AEE83D /* ViewController.h */,
-				42E34D1F1A602B0600AEE83D /* ViewController.m */,
-				42E34D211A602B0600AEE83D /* Main.storyboard */,
 				42E34D241A602B0600AEE83D /* Images.xcassets */,
-				42E34D261A602B0600AEE83D /* LaunchScreen.xib */,
 				42E34D1B1A602B0600AEE83D /* Your_Clock.xcdatamodeld */,
 				42E34D141A602B0500AEE83D /* Supporting Files */,
 			);
@@ -99,6 +121,9 @@
 		42E34D141A602B0500AEE83D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				42BCF1E91A615C950031399F /* clockBg.png */,
+				42BCF1EA1A615C950031399F /* Minite.png */,
+				42BCF1EB1A615C950031399F /* Hour.png */,
 				42E34D151A602B0500AEE83D /* Info.plist */,
 				42E34D161A602B0500AEE83D /* main.m */,
 			);
@@ -202,9 +227,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42E34D231A602B0600AEE83D /* Main.storyboard in Resources */,
 				42E34D281A602B0600AEE83D /* LaunchScreen.xib in Resources */,
+				42BCF1E21A615A890031399F /* RootViewController.xib in Resources */,
 				42E34D251A602B0600AEE83D /* Images.xcassets in Resources */,
+				42BCF1EE1A615C950031399F /* Hour.png in Resources */,
+				42BCF1ED1A615C950031399F /* Minite.png in Resources */,
+				42BCF1EC1A615C950031399F /* clockBg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,7 +252,7 @@
 			files = (
 				42E34D1A1A602B0500AEE83D /* AppDelegate.m in Sources */,
 				42E34D171A602B0500AEE83D /* main.m in Sources */,
-				42E34D201A602B0600AEE83D /* ViewController.m in Sources */,
+				42E34D401A602B2900AEE83D /* RootViewController.m in Sources */,
 				42E34D1D1A602B0600AEE83D /* Your_Clock.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,14 +276,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		42E34D211A602B0600AEE83D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				42E34D221A602B0600AEE83D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		42E34D261A602B0600AEE83D /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -416,6 +436,7 @@
 				42E34D391A602B0600AEE83D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		42E34D3A1A602B0600AEE83D /* Build configuration list for PBXNativeTarget "Your ClockTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +445,7 @@
 				42E34D3C1A602B0600AEE83D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
