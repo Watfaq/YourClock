@@ -9,6 +9,7 @@
 #import <math.h>
 #import "Alarm.h"
 #import "RootViewController.h"
+#import "RecordViewController.h"
 
 @interface RootViewController ()
 
@@ -24,6 +25,12 @@
     swipeDownGuesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeDown)];
     swipeDownGuesture.direction = UISwipeGestureRecognizerDirectionDown;
     [self.view addGestureRecognizer:swipeDownGuesture];
+    
+    // slide up guesture register
+    UISwipeGestureRecognizer *swipUpGuesture;
+    swipUpGuesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeUp)];
+    swipUpGuesture.direction = UISwipeGestureRecognizerDirectionUp;
+    [self.view addGestureRecognizer:swipUpGuesture];
     
     // hour hand guesture register
     UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(moveViewWithGestureRecognizerLong:)];
@@ -55,6 +62,13 @@
     }
     self.switchLabel.text = switchText;
 }
+
+- (void) handleSwipeUp
+{
+    RecordViewController *record = [[RecordViewController alloc] init];
+    [self presentViewController:record animated:YES completion:nil];
+}
+
 - (void) moveViewWithGestureRecognizerLong:(UIPanGestureRecognizer *)panGestureRecognizer
 {
     if (panGestureRecognizer.state == UIGestureRecognizerStateChanged) {

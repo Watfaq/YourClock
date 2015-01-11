@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		42055DD31A62B31C0033A63D /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 42055DD21A62B31C0033A63D /* Alarm.m */; };
+		4280D3001A62BB0D00F54A17 /* RecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4280D2FE1A62BB0D00F54A17 /* RecordViewController.m */; };
+		4280D3011A62BB0D00F54A17 /* RecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4280D2FF1A62BB0D00F54A17 /* RecordViewController.xib */; };
 		42BCF1E21A615A890031399F /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42BCF1E11A615A890031399F /* RootViewController.xib */; };
 		42BCF1EC1A615C950031399F /* clockBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 42BCF1E91A615C950031399F /* clockBg.png */; };
 		42BCF1ED1A615C950031399F /* Minite.png in Resources */ = {isa = PBXBuildFile; fileRef = 42BCF1EA1A615C950031399F /* Minite.png */; };
@@ -34,6 +36,9 @@
 /* Begin PBXFileReference section */
 		42055DD11A62B31C0033A63D /* Alarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alarm.h; sourceTree = "<group>"; };
 		42055DD21A62B31C0033A63D /* Alarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alarm.m; sourceTree = "<group>"; };
+		4280D2FD1A62BB0D00F54A17 /* RecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordViewController.h; sourceTree = "<group>"; };
+		4280D2FE1A62BB0D00F54A17 /* RecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordViewController.m; sourceTree = "<group>"; };
+		4280D2FF1A62BB0D00F54A17 /* RecordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordViewController.xib; sourceTree = "<group>"; };
 		42BCF1E11A615A890031399F /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		42BCF1E91A615C950031399F /* clockBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clockBg.png; sourceTree = "<group>"; };
 		42BCF1EA1A615C950031399F /* Minite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Minite.png; sourceTree = "<group>"; };
@@ -83,6 +88,8 @@
 		42BCF1F31A616A400031399F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4280D2FD1A62BB0D00F54A17 /* RecordViewController.h */,
+				4280D2FE1A62BB0D00F54A17 /* RecordViewController.m */,
 				42E34D3D1A602B2900AEE83D /* RootViewController.h */,
 				42E34D3E1A602B2900AEE83D /* RootViewController.m */,
 			);
@@ -94,6 +101,7 @@
 			children = (
 				42E34D261A602B0600AEE83D /* LaunchScreen.xib */,
 				42BCF1E11A615A890031399F /* RootViewController.xib */,
+				4280D2FF1A62BB0D00F54A17 /* RecordViewController.xib */,
 			);
 			name = Layouts;
 			sourceTree = "<group>";
@@ -244,6 +252,7 @@
 				42BCF1E21A615A890031399F /* RootViewController.xib in Resources */,
 				42E34D251A602B0600AEE83D /* Images.xcassets in Resources */,
 				42BCF1EE1A615C950031399F /* Hour.png in Resources */,
+				4280D3011A62BB0D00F54A17 /* RecordViewController.xib in Resources */,
 				42BCF1ED1A615C950031399F /* Minite.png in Resources */,
 				42BCF1EC1A615C950031399F /* clockBg.png in Resources */,
 			);
@@ -266,6 +275,7 @@
 				42E34D1A1A602B0500AEE83D /* AppDelegate.m in Sources */,
 				42E34D171A602B0500AEE83D /* main.m in Sources */,
 				42E34D401A602B2900AEE83D /* RootViewController.m in Sources */,
+				4280D3001A62BB0D00F54A17 /* RecordViewController.m in Sources */,
 				42055DD31A62B31C0033A63D /* Alarm.m in Sources */,
 				42E34D1D1A602B0600AEE83D /* Your_Clock.xcdatamodeld in Sources */,
 			);
