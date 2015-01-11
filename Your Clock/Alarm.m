@@ -17,7 +17,7 @@
 {
     UILocalNotification *notify = [[UILocalNotification alloc] init];
     notify.fireDate = date;
-    notify.timeZone = [NSTimeZone localTimeZone];
+    notify.timeZone = [NSTimeZone defaultTimeZone];
     notify.alertAction = @"A";
     notify.alertBody = ALART_BODY;
 
@@ -25,7 +25,8 @@
     notify.applicationIconBadgeNumber = 0;
     
     [[UIApplication sharedApplication] scheduleLocalNotification:notify];
-    NSLog(@"Alarm enabled");
+    NSLog(@"Now is: %@", [NSDate date].description);
+    NSLog(@"Alarm enabled on: %@", date.description);
 }
 
 + (void) cancelAlarm

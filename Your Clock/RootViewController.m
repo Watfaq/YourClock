@@ -42,7 +42,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void) setTime {
+- (void) setTimeLabel {
     self.textHour.text = [@(_hour) stringValue];
     self.textMinute.text = [@(_minute) stringValue];
 }
@@ -54,7 +54,7 @@
     NSString *switchText = @"ALARM ";
     if (_enabled) {
         switchText = [switchText stringByAppendingString:@"ON"];
-        [Alarm setUpAlarm:[NSDate date]];
+        [Alarm setUpAlarm:[NSDate dateWithTimeIntervalSinceNow:5]];
     }
     else {
         switchText = [switchText stringByAppendingString:@"OFF"];
@@ -99,7 +99,7 @@
         _minute = angle / 360 * 60;
         _minute += 15;
         _minute = fmod(_minute, 60);
-        [self setTime];
+        [self setTimeLabel];
         
         NSLog(@"Touch point: (%f, %f)", touchPoint.x, touchPoint.y);
         NSLog(@"Center Point: (%f, %f)", centerY, centerY);
@@ -118,7 +118,7 @@ float radians2Degree(float radians) { return radians * 180 / M_PI; }
     _minute = 10;
 
     [self setUpClockLayout];
-    [self setTime];
+    [self setTimeLabel];
 }
 
 - (void) setUpClockLayout
