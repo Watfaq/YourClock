@@ -7,6 +7,7 @@
 //
 
 #import <math.h>
+#import "Alarm.h"
 #import "RootViewController.h"
 
 @interface RootViewController ()
@@ -17,6 +18,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // slide down guesture register
+    UISwipeGestureRecognizer *swipeDownGuesture;
+    swipeDownGuesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeDown)];
+    swipeDownGuesture.direction = UISwipeGestureRecognizerDirectionDown;
+    [self.view addGestureRecognizer:swipeDownGuesture];
+    
+    // hour hand guesture register
     UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(moveViewWithGestureRecognizerLong:)];
     [self.lineLong addGestureRecognizer:panGestureRecognizer];
 }
@@ -31,13 +40,27 @@
     self.textMinute.text = [@(_minute) stringValue];
 }
 
--(void) moveViewWithGestureRecognizerLong:(UIPanGestureRecognizer *)panGestureRecognizer
+- (void) handleSwipeDown
+{
+
+    _enabled = !_enabled;
+    NSString *switchText = @"ALARM ";
+    if (_enabled) {
+        switchText = [switchText stringByAppendingString:@"ON"];
+        [Alarm setUpAlarm:[NSDate date]];
+    }
+    else {
+        switchText = [switchText stringByAppendingString:@"OFF"];
+        [Alarm cancelAlarm];
+    }
+    self.switchLabel.text = switchText;
+}
+- (void) moveViewWithGestureRecognizerLong:(UIPanGestureRecognizer *)panGestureRecognizer
 {
     if (panGestureRecognizer.state == UIGestureRecognizerStateChanged) {
-        self.lineLong.layer.anchorPoint = CGPointMake(0, 1);
         
-        CGFloat centerX = self.clockBg.frame.size.width / 2;
-        CGFloat centerY = self.clockBg.frame.size.height / 2;
+        CGFloat centerX = self.clockBg.frame.size.width / 2 + 1;  // border width?
+        CGFloat centerY = self.clockBg.frame.size.height / 2 - 1;
         
         CGPoint touchPoint = [panGestureRecognizer locationInView:self.clockBg];
         
@@ -47,15 +70,21 @@
         CGFloat angle = atan2f(deltaY, deltaX);
         
         [UIView beginAnimations:@"hourHand_rotate" context:nil];
-        [UIView setAnimationDuration:2];
+        [UIView setAnimationDuration:0];
         
         [UIView setAnimationDelegate:self];
         [UIView setAnimationRepeatCount:1];
         
-        self.lineLong.layer.transform = CATransform3DMakeRotation(angle, 0, 0, 1);
+//        self.lineLong.layer.transform = CATransform3DMakeRotation(angle, 0, 0, 1);
+        self.lineLong.transform = CGAffineTransformMakeRotation(angle);
         [UIView commitAnimations];
         
-        _hour = fmodf(angle / M_2_PI * 24, 24);
+        if (angle < 0)
+            angle = M_PI * 2 + angle;
+        angle = radians2Degree(angle);
+        _minute = angle / 360 * 60;
+        _minute += 15;
+        _minute = fmod(_minute, 60);
         [self setTime];
         
         NSLog(@"Touch point: (%f, %f)", touchPoint.x, touchPoint.y);
@@ -67,22 +96,26 @@
 }
 
 float degree2Radians(float degrees) { return degrees * M_PI / 180; }
+float radians2Degree(float radians) { return radians * 180 / M_PI; }
 
 - (void) viewWillAppear:(BOOL)animated
 {
     _hour = 10;
     _minute = 10;
 
+    [self setUpClockLayout];
     [self setTime];
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void) setUpClockLayout
+{
+    
+    CALayer *containLayer = self.containLayer.layer;
+    CGPoint center = CGPointMake(containLayer.frame.size.width / 2, containLayer.frame.size.height / 2);
+    CGRect lineLongFrame = CGRectMake(center.x, center.y, self.lineLong.frame.size.width, self.lineLong.frame.size.height);
+    self.lineLong.frame = lineLongFrame;
+    self.lineLong.center = CGPointMake(0, 0);
+    self.lineLong.layer.anchorPoint = CGPointMake(0, 1);
 }
-*/
 
 @end

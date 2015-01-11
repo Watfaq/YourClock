@@ -11,7 +11,12 @@
 @interface RootViewController : UIViewController {
     NSInteger _hour;
     NSInteger _minute;
+    NSInteger _enabled;
 }
+
+@property (weak, nonatomic) IBOutlet UILabel *switchLabel;
+
+@property (weak, nonatomic) IBOutlet UIView *containLayer;
 
 @property (weak, nonatomic) IBOutlet UIImageView *clockBg;
 
