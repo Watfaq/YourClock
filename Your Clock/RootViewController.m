@@ -9,12 +9,7 @@
 #import <math.h>
 #import "RootViewController.h"
 
-#define centerX 160
-#define centerY 264
-
-@interface RootViewController () {
-    CGPoint prevPoint;
-}
+@interface RootViewController ()
 
 @end
 
@@ -22,7 +17,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    prevPoint = CGPointMake(-1, -1);
     UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(moveViewWithGestureRecognizerLong:)];
     [self.lineLong addGestureRecognizer:panGestureRecognizer];
 }
@@ -39,42 +33,40 @@
 
 -(void) moveViewWithGestureRecognizerLong:(UIPanGestureRecognizer *)panGestureRecognizer
 {
-    if (prevPoint.x == -1) {
-        prevPoint = [panGestureRecognizer locationInView:self.view];
-    }
     if (panGestureRecognizer.state == UIGestureRecognizerStateChanged) {
-        if (prevPoint.x == -1) // no prev point, do nothing
-            return;
-        
         self.lineLong.layer.anchorPoint = CGPointMake(0, 1);
         
-        CGPoint centerPoint = CGPointMake(centerX, centerY);
-        CGPoint touchPoint = [panGestureRecognizer locationInView:self.view];
-        CGFloat angle = angleBetweenLinesInDegrees(centerPoint, prevPoint, centerPoint, touchPoint);
+        CGFloat centerX = self.clockBg.frame.size.width / 2;
+        CGFloat centerY = self.clockBg.frame.size.height / 2;
+        
+        CGPoint touchPoint = [panGestureRecognizer locationInView:self.clockBg];
+        
+        CGFloat deltaX = touchPoint.x - centerX;
+        CGFloat deltaY = touchPoint.y - centerY;
+        
+        CGFloat angle = atan2f(deltaY, deltaX);
+        
+        [UIView beginAnimations:@"hourHand_rotate" context:nil];
+        [UIView setAnimationDuration:2];
+        
+        [UIView setAnimationDelegate:self];
+        [UIView setAnimationRepeatCount:1];
         
         self.lineLong.layer.transform = CATransform3DMakeRotation(angle, 0, 0, 1);
+        [UIView commitAnimations];
+        
+        _hour = fmodf(angle / M_2_PI * 24, 24);
+        [self setTime];
+        
+        NSLog(@"Touch point: (%f, %f)", touchPoint.x, touchPoint.y);
+        NSLog(@"Center Point: (%f, %f)", centerY, centerY);
+        NSLog(@"Position: (%f, %f)", deltaX, deltaY);
+        NSLog(@"Minute position: (%f, %f)", self.lineLong.center.x, self.lineLong.center.y);
     }
     
 }
 
 float degree2Radians(float degrees) { return degrees * M_PI / 180; }
-
-CGFloat angleBetweenLinesInDegrees(CGPoint beginLineA,
-                                   CGPoint endLineA,
-                                   CGPoint beginLineB,
-                                   CGPoint endLineB)
-{
-    CGFloat a = endLineA.x - beginLineA.x;
-    CGFloat b = endLineA.y - beginLineA.y;
-    CGFloat c = endLineB.x - beginLineB.x;
-    CGFloat d = endLineB.y - beginLineB.y;
-    
-    CGFloat atanA = atan2(a, b);
-    CGFloat atanB = atan2(c, d);
-    
-    // convert radiants to degrees
-    return (atanA - atanB) * 180 / M_PI;
-}
 
 - (void) viewWillAppear:(BOOL)animated
 {

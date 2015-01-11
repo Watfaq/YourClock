@@ -13,6 +13,8 @@
     NSInteger _minute;
 }
 
+@property (weak, nonatomic) IBOutlet UIImageView *clockBg;
+
 @property (weak, nonatomic) IBOutlet UIImageView *lineShort;
 
 @property (weak, nonatomic) IBOutlet UIImageView *lineLong;
